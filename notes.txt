@@ -1,0 +1,26 @@
+
+rails new members-only
+
+cd members-only
+
+git init .
+git add .
+git commit -m "first commit"
+
+* add devise gem to gemfile
+bundle install
+rails generate devise:install
+rails g devise:views
+
+rails generate devise User
+rails db:migrate
+
+rails g migration AddFieldsToUser
+rails db:migrate
+
+rails generate model Post user_id:integer username:string title:string content:string
+rails db:migrate
+
+rails generate controller Posts
+
+# add to Posts controller :  before_action :authenticate_user!
