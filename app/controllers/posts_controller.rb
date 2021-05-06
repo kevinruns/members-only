@@ -1,23 +1,6 @@
 class PostsController < ApplicationController
 
-  before_action :authenticate_user!
-
-  def new
-    @post = Post.new
-  end
-
-  def create
-#    @post = Post.new(post_params)
-
-    @post = current_user.post.build(post_params)
-    @post.user_id = current_user.id
-
-    if @post.save
-      redirect_to @post
-    else
-      render :new
-    end
-  end
+  before_action :authenticate_user!, :except => [:index]
 
   def index
     @posts = Post.all
@@ -25,6 +8,22 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+  end
+
+  def new
+    @post = Post.new
+  end
+
+  def create
+
+    @post = current_user.posts.build(post_params)
+    @post.user_id = current_user.id
+
+    if @post.save
+      redirect_to posts_path
+    else
+      render :new
+    end
   end
 
   private
