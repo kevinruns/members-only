@@ -1,0 +1,24 @@
+
+<%= form_with model: @post do |form| %>
+  
+  <div>
+    <%= form.label :title %><br>
+    <%= form.text_field :title, style: "width:70%" %>
+    <% @post.errors.full_messages_for(:title).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :content %><br>
+    <%= form.text_area :content, rows: 10, style: "width:70%"  %><br>
+    <% @post.errors.full_messages_for(:body).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+

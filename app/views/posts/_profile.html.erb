@@ -1,0 +1,44 @@
+
+
+<div class="card">
+
+  <div class="card-header  bg-light">
+    Profile
+  </div>
+
+  <div class="card-body">
+
+      <div class="media d-flex mb-0">
+        <div class="pe-3 mb-0">
+          <img src="32x32.png" alt="32x32" style="width: 32px; height: 32px">
+        </div>
+        <div class="media-body">
+        	<p class="mb-2">
+				  	<strong><%= current_user.name %></strong><br />
+			  		<small><%= current_user.username %></small>
+          </p>
+        </div>
+      </div>
+
+  </div>
+
+  <div class="card-footer text-muted">
+    <div class="d-flex">
+      <div class="me-3">
+					<p class="mb-0"><small>Posts</small></p>
+					<p class="mb-0"><small><strong><%= current_user.posts.count %></strong></small></p>
+      </div>
+      <div class="me-3">
+					<p class="mb-0"><small>Following</small></p>
+					<p class="mb-0"><small><strong>123</strong></small></p>
+      </div>
+      <div class="me-3">
+					<p class="mb-0"><small>Followers</small></p>
+					<p class="mb-0"><small><strong>465K</strong></small></p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+

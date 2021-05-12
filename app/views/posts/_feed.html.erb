@@ -1,0 +1,12 @@
+
+<ul class="list-group">
+  <% @posts.each do |post| %>
+    <li class="border list-group-item mb-1">
+        <%= link_to post.title, post %><br>
+        <%= post.content %><br>
+        <% if user_signed_in? %>
+          <small><%= post.user.username %></small>
+        <% end %>
+    </li>
+  <% end %>
+</ul>
