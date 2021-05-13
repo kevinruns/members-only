@@ -1,18 +1,18 @@
 
-<div class="container-fluid">
+<div class="container">
 
   <div class="row my-5">
-    <div class="col-3">
+    <div class="col-md-3">
       <% if user_signed_in? %>
     		<%= render 'profile' %>
     	<% else %>
        <%= render 'trends' %>
       <% end %>  
     </div>
-    <div class="col-6">
+    <div class="col-md-6">
       <%= render 'feed' %>
     </div>
-    <div class="col-3">
+    <div class="col-md-3">
       <%= render 'who_to_follow' %>
     </div>
   </div>

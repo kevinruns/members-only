@@ -1,7 +1,7 @@
 
-<ul class="list-group">
+<ul class="list-group mx-2 mb-5">
   <% @posts.each do |post| %>
-    <li class="border list-group-item mb-1">
+    <li class="border list-group-item mb-3">
         <%= link_to post.title, post %><br>
         <%= post.content %><br>
         <% if user_signed_in? %>
